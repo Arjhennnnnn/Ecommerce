@@ -1,9 +1,11 @@
 Credentials => user -> email
                        password
+                       fullname
                        phone number
                 
 user_address => user_id
                 address_id
+
 
 address      => id
                 unit_number
@@ -37,10 +39,6 @@ variation_option  =>  id
                       variation_id
                       value (Grey,Dark Blue,S,XL)
 
-product_configuration => product_item_id
-                         variation_id
-
-
 product_item => id
                 product_id
                 SKU (bar codes or QR Codes)
@@ -48,13 +46,27 @@ product_item => id
                 product_image
                 price
 
+
+product_configuration => product_item_id
+                         variation_id
+
+
+shopping_cart      => id
+                      user_id
+
+
 shopping_cart_item => id
                       cart_id
                       product_item_id
                       qty
 
-shopping_cart      => id
-                      user_id
+order_status       => id
+                      status
+
+                      
+shipping_method    => id
+                      name
+                      price
 
 
 shop_order         => id
@@ -65,13 +77,6 @@ shop_order         => id
                       shipping_method (fk)
                       order_total
                       order_status (fk)
-
-order_status       => id
-                      status
-
-shipping_method    => id
-                      name
-                      price
 
 
 order_line          => id
