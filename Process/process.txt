@@ -1,0 +1,110 @@
+Credentials => user -> email
+                       password
+                       phone number
+                
+user_address => user_id
+                address_id
+
+address      => id
+                unit_number
+                street number
+                address_line1
+                address_line2
+                city
+                region
+                postal_code
+                country_id (fk)
+
+country      => id
+                country_name
+
+
+product_category => id
+                    parent_category_id
+                    category_name
+
+product         => id
+                   category_id
+                   name (eg. Under Armor Jogger)
+                   description
+                   product_image
+
+variations  =>  id
+                category_id
+                name (Colour,Size)
+
+variation_option  =>  id
+                      variation_id
+                      value (Grey,Dark Blue,S,XL)
+
+product_configuration => product_item_id
+                         variation_id
+
+
+product_item => id
+                product_id
+                SKU (bar codes or QR Codes)
+                qty_in_stock
+                product_image
+                price
+
+shopping_cart_item => id
+                      cart_id
+                      product_item_id
+                      qty
+
+shopping_cart      => id
+                      user_id
+
+
+shop_order         => id
+                      user_id (fk)
+                      order_date
+                      payment_method_id
+                      shipping_address (fk)
+                      shipping_method (fk)
+                      order_total
+                      order_status (fk)
+
+order_status       => id
+                      status
+
+shipping_method    => id
+                      name
+                      price
+
+
+order_line          => id
+                       product_item_id
+                       order_id
+                       qty
+                       price
+
+
+user_review         => id 
+                       user_id
+                       ordered_product_id
+                       rating_value
+                       comment
+
+promotion           => id
+                       name
+                       description
+                       discount_rate
+                       start_date
+                       end_date
+
+
+promotion_category  => category_id
+                    => promotion_id
+
+
+
+
+
+
+
+
+            
+
+
