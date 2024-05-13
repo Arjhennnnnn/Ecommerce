@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->id();
 
-            $table->foreignId('parent_category_id')->constrained('product_categories')->nullable();
+            $table->unsignedBigInteger('parent_category_id')->nullable();
 
             $table->string('category_name')->nullable();
 
