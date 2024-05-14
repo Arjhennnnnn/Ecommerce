@@ -15,8 +15,6 @@ return new class extends Migration
 
             $table->id();
 
-            $table->unsignedBigInteger('parent_category_id')->nullable();
-
             $table->string('category_name')->nullable();
 
             $table->timestamps();
